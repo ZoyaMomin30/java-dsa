@@ -1,0 +1,55 @@
+class Pen{
+    String color;
+    String type;
+
+    public void write(){
+        System.out.println("writing");
+    }
+
+    public void printColor(){
+        System.out.println(this.color);
+    }
+
+    public void printType(){
+        System.out.println(this.type);
+    }
+
+
+}
+
+class Student{
+    String name;
+    int age;
+
+    public void write(){
+        System.out.println("writing");
+    }
+
+    public void printInfo(){
+        System.out.println(this.name);
+         System.out.println(this.age);
+
+    }
+        Student(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
+
+}
+
+public class oops {
+    public static void main(String args[]){
+        Pen trimax = new Pen();
+        trimax.color = "blue";
+        trimax.type = "fountain";
+
+        trimax.write();
+        trimax.printColor();
+        trimax.printType();
+
+        Student s1 = new Student("Zoya",25);
+        s1.printInfo();
+        
+    }
+
+}

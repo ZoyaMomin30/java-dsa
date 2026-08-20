@@ -1,0 +1,13 @@
+
+public class LenOfLastWord {
+    public static void main (String[] args){
+        String s = "   fly me   to   the mooon   ";
+        s=s.trim();
+        System.out.println(s);
+        int count = 0;
+        for (int i = s.length() -1 ; i>=0 && s.charAt(i) != ' '; i--){
+            count++;
+        }
+        System.out.println(count);
+    }
+}

@@ -1,0 +1,48 @@
+public class PrintAllSubarray {
+    public static void main (String[] args){
+    int[] arr = {1, 2, 3, 4, 5}; 
+    int n = 5;
+
+    //brute force
+    System.out.println("printing the subarray: ");
+    for (int i = 0; i < n ; i++){
+        for (int j = i ; j < n ; j++){
+            for(int k = i; k <= j; k++){
+                System.out.print(arr[k]);
+            }
+            System.out.print(" ");
+        }
+        System.out.println();
+
+    }
+    System.out.println();
+    System.out.println("calculating the sum of the subarray");
+    System.out.println();
+
+    //brute force 
+    int max_sum = Integer.MIN_VALUE;
+
+    for (int i = 0; i < n ; i++){
+        int curr_sum = 0;
+        for (int j = i ; j < n ; j++){
+            curr_sum += arr[j];
+            max_sum = Math.max (curr_sum,max_sum );
+        }
+    }
+    System.out.println("Max subarray sum : "+ max_sum);
+    
+    //using kadanes algorithm.
+    //basically says to reset the value to zero if the value is negative. 
+    int max = Integer.MIN_VALUE;
+    int currSum = 0;
+    for(int val : arr){
+        currSum += val;
+        max = Math.max(currSum,max);
+        if (currSum < 0){
+            currSum = 0;
+        }
+    }
+    System.out.println("Max subarray sum (using Kadanes algorithm) : "+ max);
+
+    }
+}
